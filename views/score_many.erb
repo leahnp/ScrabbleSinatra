@@ -11,11 +11,19 @@
   <input type="text" name="all_words[word]" value="" id="word">
 
   <input type="submit" value="Submit">
-  <p> Total Score: <%=@score%></p>
+<!--   <p> Total Score: <%=@score%></p>
   <p>Words! <%=@words%></p>
   <p>Word array! <%=@word_array%></p>
-  <p>Word array class! <%=@word_array.class%></p>
+  <p>Word array class! <%=@word_array.class%></p> -->
   <p>Word hash! <%=@word_list%></p>
-<!--   <p><%=@test%></p> -->
+    <p>Word hash! <%=@word_list.class%></p>
+  <%if @word_list != nil%>
+  <%@word_list.each do |key, value|%>
+  <%=key%>
+  <%=value%>
+  <%end%>
+  <%end%>
+
+
 
 </form>
