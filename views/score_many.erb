@@ -1,29 +1,17 @@
 <h1>Score Many Words!</h1>
 <h1><a href="/score">Score One Word</a><h1>
 
-<div class="params">
-	<%= params %>
-</div>
-
 <form action="" method="post" accept-charset="utf-8">
   <label for="word">Word</label>
 <!--   <input type="text" name="all_words[word]" value="" id="word"> -->
   <input type="text" name="all_words[word]" value="" id="word">
 
   <input type="submit" value="Submit">
-<!--   <p> Total Score: <%=@score%></p>
-  <p>Words! <%=@words%></p>
-  <p>Word array! <%=@word_array%></p>
-  <p>Word array class! <%=@word_array.class%></p> -->
-  <p>Word hash! <%=@word_list%></p>
-    <p>Word hash! <%=@word_list.class%></p>
+
   <%if @word_list != nil%>
-  <%@word_list.each do |key, value|%>
-  <%=key%>
-  <%=value%>
+  	<p><%@word_list.each do |key, value|%>
+  		<br><%=key%>
+  		<%=value%><br>
+  	<%end%></p>
   <%end%>
-  <%end%>
-
-
-
 </form>
