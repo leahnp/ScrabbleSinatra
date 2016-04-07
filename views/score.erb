@@ -1,0 +1,17 @@
+<h1>Score One Word!</h1>
+<h1><a href="/score-many">Score Many Words</a><h1>
+
+<div class="params">
+	<%= params %>
+</div>
+
+<form action="" method="post" accept-charset="utf-8">
+  <label for="word">Word</label>
+  <input type="text" name="all_words[word]" value="" id="word">
+
+
+  <input type="submit" value="Submit">
+  <p> Score: <%=@score%></p>
+  <p><%=@word_list%></p>
+  <p><%=@word_list.class%></p>
+</form>
