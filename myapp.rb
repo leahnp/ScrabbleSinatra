@@ -30,7 +30,20 @@ class MyApp < Sinatra::Base
   # end
 
   post '/score-many' do
+    @word_list = Hash.new
+    @words = params["all_words"]
+    # @words = words.value
+    @word_array = @words["word"].split(" ")
+
+    @word_array.each do |word|
+      # w = Words.new("#{word}")
+      # w = Words.new(params["#{word}"])
+      w = Test.new(word)
+      score = Test.score(w.word)
+      @word_list["#{word}"] = score
+    end
+    erb :score_many
   end
-  
+
   run!
 end
