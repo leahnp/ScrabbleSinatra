@@ -18,6 +18,13 @@ class MyApp < Sinatra::Base
     erb :score
   end
 
+  post '/runMethod' do
+    @word = Words.new(params["all_word[word_to_score]"])
+    @hash = Words.score_letters(params["#{@word.word}"])
+    # shop.add_to_cart(params[:product], params[:quantity])
+    erb :score
+  end
+
   get '/score-many' do
     erb :score_many
   end

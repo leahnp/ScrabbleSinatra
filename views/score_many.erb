@@ -1,17 +1,25 @@
-<h1>Score Many Words!</h1>
-<h1><a href="/score">Score One Word</a><h1>
+<h1>Multi-Word Game</h1>
+<section>
+<div class="flex-container">
+	<fieldset>
+		<legend>Play</legend>
+			
+		<form action="" method="post" accept-charset="utf-8">
+		  <label for="word">Words (seperated by spaces)</label>
+		  <input type="text" name="all_words[word]" value="" id="word">
 
-<form action="" method="post" accept-charset="utf-8">
-  <label for="word">Word</label>
-<!--   <input type="text" name="all_words[word]" value="" id="word"> -->
-  <input type="text" name="all_words[word]" value="" id="word">
+		  <input type="submit" value="Submit">
 
-  <input type="submit" value="Submit">
-
-  <%if @word_list != nil%>
-  	<p><%@word_list.each do |key, value|%>
-  		<br><%=key%>
-  		<%=value%><br>
-  	<%end%></p>
-  <%end%>
-</form>
+		  <%if @word_list != nil%>
+		  	<p><%@word_list.each do |key, value|%>
+		  		<br>Score for "<%=key.downcase%>":
+		  		<%=value%><br>
+		  	<%end%></p>
+		  <%end%>
+		</form>
+	</fieldset>
+	</div>
+	<div class="flex-container">
+		<a class="flex-item" id="tiles" href="/score">One Word Game</a>
+	</div>
+</section>

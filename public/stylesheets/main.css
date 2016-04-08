@@ -1,7 +1,65 @@
+html {
+	font-size: 16px;
+	font-family: sans-serif;
+}
+
 body {
-	background-color: rgb(204, 255, 204);
+	background-color: rgb(255, 255, 204);
+	height: 100%;
+}
+
+header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
 }
 
 h1 {
 	text-align: center;
+}
+
+section {
+	width:100%;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(255, 255, 204);
+}
+
+p {
+	text-align: center;
+}
+
+#tiles {
+	background-image: url('/images/tile.jpg');
+	display: table-cell;
+/*	vertical-align: bottom;*/
+	text-align: center;
+	margin:25px;
+	height: 235px;
+	width: 215px;
+	color:black;
+	font-family: sans-serif;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 2rem;
+}
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.flex-item {
+    margin: 20px;
+}
+
+.tile_links {
+	color:black;
+	margin-top: 50px;
 }

@@ -1,14 +1,32 @@
-<h1>Score One Word!</h1>
-<h1><a href="/score-many">Score Many Words</a><h1>
+<h1>One Word Game</h1>
+<section>
+	<div class="flex-container">
+		<fieldset>
+		<legend>Play</legend>
+			<form action="" method="post" accept-charset="utf-8">
+			  <label for="word">Word</label>
+			  <input type="text" name="all_words[word]" value="" id="word">
 
-<form action="" method="post" accept-charset="utf-8">
-  <label for="word">Word</label>
-  <input type="text" name="all_words[word]" value="" id="word">
+			  <input type="submit" value="Submit">
 
+			  <p><%if @score != nil%>
+			  		Score for "<%=@word.word%>": <%=@score%><br>
+			  		<form method="post" action="/runMethod">
+    					<input type="hidden" name="all_word[word_to_score]" value="<%=@word.word%>">
+    					<input class='btn btn-primary' type='submit' value='Get Score For Each Letter'>
+						</form>
+			  	<%end%>
 
-  <input type="submit" value="Submit">
-  <p><%if @score != nil%>
-  		Score: <%=@score%>
-  	<%end%>
-  	</p>
-</form>
+			  		<%=@hash%>
+
+			  	</p>
+			</form>
+		</fieldset>
+	</div>
+	<div class="flex-container">
+		<div class="flex-item" id="tiles">
+				<a class="tile_links" href="/score-many">Multi-Word 	Game</a>
+			</div>
+		</div>
+	</div>
+</section>

@@ -36,6 +36,32 @@ class Words
     # return score as int
     return score
   end
+# end
+
+  # returns score per letter (single word)
+  def self.score_letters(word)
+    word.upcase!
+    score = 0
+    letters_hash = Hash.new
+    word.each_char do |letter|
+      LETTERS.each do |k, v|
+        # k is score v is letter
+        if v.include?(letter)
+          letters_hash[letter] = k
+          score += k
+        end
+      end
+    end
+    # special bonus if you use 7 tiles
+    if word.length == 7
+      score += 50
+    end
+    # return new hash with final score as key and letters/scores as values
+    return final_hash = {
+      score: letters_hash
+    }
+    # return score
+  end
 end
 
 class Test
