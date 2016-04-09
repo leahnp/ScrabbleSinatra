@@ -47,7 +47,7 @@ p {
 	font-size: 2rem;
 }
 
-.flex-container {
+/*.flex-container {
     display: -webkit-flex;
     display: flex;
     -webkit-justify-content: center;
@@ -57,9 +57,13 @@ p {
 
 .flex-item {
     margin: 20px;
-}
+}*/
 
 .tile_links {
 	color:black;
 	margin-top: 50px;
+}
+
+.center-buttons {
+	text-align:center; 
 }
