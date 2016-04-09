@@ -5,6 +5,7 @@ class Words
 
   def initialize(options = {})
     @word = options["word"]
+    puts options
   end
 
   # letters and corresponding values for scoring the words
@@ -36,18 +37,19 @@ class Words
     # return score as int
     return score
   end
-# end
 
   # returns score per letter (single word)
   def self.score_letters(word)
+    # return "hi there #{word}"
     word.upcase!
     score = 0
-    letters_hash = Hash.new
+    letters_array = []
     word.each_char do |letter|
       LETTERS.each do |k, v|
         # k is score v is letter
         if v.include?(letter)
-          letters_hash[letter] = k
+          # make array of arrays
+          letters_array << [letter, k]
           score += k
         end
       end
@@ -58,11 +60,18 @@ class Words
     end
     # return new hash with final score as key and letters/scores as values
     return final_hash = {
-      score: letters_hash
+      score: letters_array
     }
-    # return score
+    return score
   end
 end
+
+
+# options = {"word" => "tree"}
+# test = Words.new(options)
+# puts test
+# puts Words.score_letters(test.word)
+
 
 class Test
   attr_reader :word

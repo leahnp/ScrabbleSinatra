@@ -1,5 +1,8 @@
 <h1>One Word Game</h1>
 <section>
+	<div class="params">
+  <%= params %>
+</div>
 	<div class="flex-container">
 		<fieldset>
 		<legend>Play</legend>
@@ -8,19 +11,24 @@
 			  <input type="text" name="all_words[word]" value="" id="word">
 
 			  <input type="submit" value="Submit">
+			  </form>
 
 			  <p><%if @score != nil%>
 			  		Score for "<%=@word.word%>": <%=@score%><br>
 			  		<form method="post" action="/runMethod">
-    					<input type="hidden" name="all_word[word_to_score]" value="<%=@word.word%>">
+    					<input type="hidden" name="word_to_score" value="<%=@word.word%>">
     					<input class='btn btn-primary' type='submit' value='Get Score For Each Letter'>
 						</form>
 			  	<%end%>
+						<%if @hash != nil%>
 
-			  		<%=@hash%>
-
+			  		<%array = @hash[:score]%>
+			  		<%array.each do |a|%>
+			  						<%=a[0]%>:<%=a[1]%><br>
+						<%end%>
+					<%end%>
 			  	</p>
-			</form>
+			
 		</fieldset>
 	</div>
 	<div class="flex-container">
