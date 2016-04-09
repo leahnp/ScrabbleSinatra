@@ -32,36 +32,30 @@ p {
 	text-align: center;
 }
 
-#tiles {
+#play-game {
+	width: 240px;
+	margin: auto;
+}
+
+.tiles {
 	background-image: url('/images/tile.jpg');
-	display: table-cell;
-/*	vertical-align: bottom;*/
 	text-align: center;
 	margin:25px;
 	height: 235px;
 	width: 215px;
-	color:black;
+	margin: auto;
+	margin-top: 40px;
+	color: rgb(0, 0, 0);
 	font-family: sans-serif;
 	text-decoration: none;
 	font-weight: 600;
 	font-size: 2rem;
 }
 
-/*.flex-container {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: center;
-    justify-content: center;
-    width: 100%;
-}
-
-.flex-item {
-    margin: 20px;
-}*/
-
 .tile_links {
-	color:black;
-	margin-top: 50px;
+	display: block;
+	color: black;
+	padding-top: 80px;
 }
 
 .center-buttons {

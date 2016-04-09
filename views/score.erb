@@ -1,39 +1,35 @@
 <h1>One Word Game</h1>
 <section>
-	<div class="flex-container">
-		<fieldset>
-		<legend>Play</legend>
-			<form action="" method="post" accept-charset="utf-8">
-			  <label for="word">Word</label>
-			  <input type="text" name="all_words[word]" value="" id="word">
-			  <input type="submit" value="Submit">
-			  </form>
+	<fieldset id="play-game">
+	<legend>Play</legend>
+		<form action="" method="post" accept-charset="utf-8">
+		  <label for="word">Word</label>
+		  <input type="text" name="all_words[word]" value="" id="word">
+		  <input type="submit" value="Submit">
+		  </form>
 
-			  <p><%if @score != nil%>
-			  		Score for "<%=@word.word%>": <%=@score%><br>
-			  		<form class="center-buttons" method="post" action="/runMethod">
-    					<input type="hidden" name="word_to_score" value="<%=@word.word%>">
-    					<input type='submit' value='Get Score For Each Letter'>
-						</form>
-			  	<%end%>
-						<%if @hash != nil%>
-			  		<%array = @hash[:score]%>
-			  		<%array.each do |a|%>
-			  			<%=a[0]%>:<%=a[1]%><br>
-						<%end%>
-						<form class="center-buttons" action="/score" method="get">
-  						<input type="submit" value="New Single Word Game">
-						</form>
-
+		  <p><%if @score != nil%>
+		  		Score for "<%=@word.word%>": <%=@score%><br>
+		  		<form class="center-buttons" method="post" action="/runMethod">
+						<input type="hidden" name="word_to_score" value="<%=@word.word%>">
+						<input type='submit' value='Get Score For Each Letter'>
+					</form>
+		  	<%end%>
+					<%if @hash != nil%>
+		  		<%array = @hash[:score]%>
+		  		<%array.each do |a|%>
+		  			<%=a[0]%>:<%=a[1]%><br>
 					<%end%>
-			  	</p>
-			
-		</fieldset>
-	</div>
-	<div class="flex-container">
-		<div class="flex-item" id="tiles">
-				<a class="tile_links" href="/score-many">Multi-Word 	Game</a>
-			</div>
-		</div>
+    @word_array = @words["word"].split(" ")
+					<form class="center-buttons" action="/score" method="get">
+						<input type="submit" value="New Single Word Game">
+					</form>
+
+				<%end%>
+	  	</p>
+	</fieldset>
+
+	<div class="tiles">
+		<a class="tile_links" href="/score-many">Multi-Word Game</a>
 	</div>
 </section>
